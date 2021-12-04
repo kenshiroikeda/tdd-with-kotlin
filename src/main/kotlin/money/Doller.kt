@@ -2,7 +2,7 @@ package money
 
 class Doller() {
 
-    val amount :Int = 0
+    val amount :Int = 10
 
     constructor(amount: Int) : this() {
 
