@@ -2,13 +2,13 @@ package money
 
 class Doller() {
 
-    val amount :Int = 10
+    var amount : Int = 0
 
     constructor(amount: Int) : this() {
-
+        this.amount = amount
     }
     fun times(multiplier:Int){
-
+        amount *= multiplier
     }
 
 }
