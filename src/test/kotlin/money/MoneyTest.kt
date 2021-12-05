@@ -6,8 +6,10 @@ import kotlin.test.assertEquals
 class MoneyTest {
     @Test
     fun testMultiplication() {
-        val five = Doller(5)
-        five.times(2)
-        assertEquals(10, five.amount)
+        var five = Doller(5)
+        var product = five.times(2)
+        assertEquals(10, product.amount)
+        product = five.times(3)
+        assertEquals(15, product.amount)
     }
 }

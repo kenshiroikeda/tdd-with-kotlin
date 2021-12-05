@@ -7,8 +7,8 @@ class Doller() {
     constructor(amount: Int) : this() {
         this.amount = amount
     }
-    fun times(multiplier:Int){
-        amount *= multiplier
+    fun times(multiplier:Int) : Doller{
+        return Doller(amount * multiplier)
     }
 
 }
