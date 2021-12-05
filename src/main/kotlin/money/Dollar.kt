@@ -11,4 +11,8 @@ class Dollar() {
         return Dollar(amount * multiplier)
     }
 
+    override fun equals(other: Any?): Boolean{
+        var dollar = other as Dollar
+        return amount == dollar.amount
+    }
 }
