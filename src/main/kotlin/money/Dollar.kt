@@ -1,14 +1,14 @@
 package money
 
-class Doller() {
+class Dollar() {
 
     var amount : Int = 0
 
     constructor(amount: Int) : this() {
         this.amount = amount
     }
-    fun times(multiplier:Int) : Doller{
-        return Doller(amount * multiplier)
+    fun times(multiplier:Int) : Dollar{
+        return Dollar(amount * multiplier)
     }
 
 }
