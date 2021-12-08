@@ -1,8 +1,6 @@
 package money
 
-class Dollar() {
-
-    private var amount : Int = 0
+class Dollar() : Money() {
 
     constructor(amount: Int) : this() {
         this.amount = amount
@@ -11,8 +9,4 @@ class Dollar() {
         return Dollar(amount * multiplier)
     }
 
-    override fun equals(other: Any?): Boolean{
-        var dollar = other as Dollar
-        return amount == dollar.amount
-    }
 }
