@@ -6,7 +6,7 @@ open class Money {
 
     override fun equals(other: Any?): Boolean{
         var money = other as Money
-        return amount == money.amount
+        return amount == money.amount && this.javaClass == money.javaClass
     }
 
 }
