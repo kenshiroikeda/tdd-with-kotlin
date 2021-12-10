@@ -5,8 +5,8 @@ class Dollar() : Money() {
     constructor(amount: Int) : this() {
         this.amount = amount
     }
-    fun times(multiplier:Int) : Dollar{
-        return Dollar(amount * multiplier)
+    override fun times(multiplier:Int) : Money{
+        return Dollar(amount * multiplier) as Money
     }
 
 }

@@ -1,14 +1,16 @@
 - $5+10CHF=$10（レートが2:1の場合）
 - ~~$5*2=$10amountをprivateにする~~
-- Dollarの副作用どうする？
+- ~~amountをprivateにする~~
+- ~~Dollarの副作用どうする？~~
 - Moneyの丸め処理どうする？
 - ~~equals()~~
 - hashCode()
 - nullとの等価性比較
 - 他のオブジェクトとの等価性比較
 - ~~5CHF*2=10CHF~~
-- DollarとFrancの重複
+- __DollarとFrancの重複__
 - ~~equalsの一般化~~
 - timesの一般化
 - ~~Franc と Dollar を 比較 する~~
 - 通貨 の 概念
+- testFrancMultiApplicationを削除する
