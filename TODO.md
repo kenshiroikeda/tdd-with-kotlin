@@ -13,4 +13,4 @@
 - timesの一般化
 - ~~Franc と Dollar を 比較 する~~
 - 通貨 の 概念
-- testFrancMultiApplicationを削除する
+- testFrancMultiApplicationを削除する?

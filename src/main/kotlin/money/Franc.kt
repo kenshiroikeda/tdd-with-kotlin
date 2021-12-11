@@ -1,12 +1,9 @@
 package money
 
-class Franc() : Money() {
+class Franc(amount: Int, currency: String) : Money(amount, currency) {
 
-    constructor(amount: Int) : this() {
-        this.amount = amount
-    }
     override fun times(multiplier:Int) : Money{
-        return Franc(amount * multiplier) as Money
+        return Money.franc(amount * multiplier) as Money
     }
 
 }
