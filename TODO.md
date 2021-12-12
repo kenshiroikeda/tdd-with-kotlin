@@ -10,7 +10,7 @@
 - ~~5CHF*2=10CHF~~
 - __DollarとFrancの重複__
 - ~~equalsの一般化~~
-- timesの一般化
+- ~~timesの一般化~~
 - ~~Franc と Dollar を 比較 する~~
-- 通貨 の 概念
+- 通貨の概念
 - testFrancMultiApplicationを削除する?
