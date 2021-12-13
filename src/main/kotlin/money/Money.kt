@@ -2,8 +2,8 @@ package money
 
 open class Money {
 
-    var amount : Int = 0
-    var currency : String = ""
+    private var amount : Int = 0
+    private var currency : String = ""
 
     constructor(amount: Int, currency: String){
         this.amount = amount
@@ -28,11 +28,11 @@ open class Money {
     }
 
     companion object {
-        fun dollar(amount: Int): Dollar {
-            return Dollar(amount, "USD");
+        fun dollar(amount: Int): Money {
+            return Money(amount, "USD");
         }
-        fun franc(amount: Int): Franc {
-            return Franc(amount, "CHF");
+        fun franc(amount: Int): Money {
+            return Money(amount, "CHF");
         }
     }
 }
