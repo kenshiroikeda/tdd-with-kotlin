@@ -1,6 +1,6 @@
 package money
 
-open class Money {
+open class Money : Expression{
 
     private var amount : Int = 0
     private var currency : String = ""
@@ -22,6 +22,11 @@ open class Money {
     fun currency(): String{
         return currency
     }
+
+    fun plus(added: Money): Expression{
+        return Money(amount + added.amount, currency)
+    }
+
 
     override fun toString(): String {
         return "$amount $currency"

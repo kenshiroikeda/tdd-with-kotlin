@@ -26,4 +26,13 @@ class MoneyTest {
         assertEquals("CHF", Money.franc(1).currency())
     }
 
+    @Test
+    fun testSimpleAddition(){
+        var five = Money.dollar(5) as Money
+        var sum = five.plus(five) as Money
+        var bank = Bank()
+        var reduced = bank.reduce(sum, "USD")
+        assertEquals(Money.dollar(10), reduced)
+    }
+
 }
