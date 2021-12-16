@@ -2,8 +2,8 @@ package money
 
 open class Money : Expression{
 
-    private var amount : Int = 0
-    private var currency : String = ""
+    var amount : Int = 0
+    var currency : String = ""
 
     constructor(amount: Int, currency: String){
         this.amount = amount
@@ -19,14 +19,17 @@ open class Money : Expression{
         return Money(amount * multiplier, currency)
     }
 
+    override fun reduce(to: String): Money{
+        return this
+    }
+
     fun currency(): String{
         return currency
     }
 
-    fun plus(added: Money): Expression{
-        return Money(amount + added.amount, currency)
+    fun plus(addend: Money): Expression {
+        return Sum(this, addend)
     }
-
 
     override fun toString(): String {
         return "$amount $currency"

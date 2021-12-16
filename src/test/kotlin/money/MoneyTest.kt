@@ -29,10 +29,34 @@ class MoneyTest {
     @Test
     fun testSimpleAddition(){
         var five = Money.dollar(5) as Money
-        var sum = five.plus(five) as Money
+        var sum = five.plus(five) as Sum
         var bank = Bank()
         var reduced = bank.reduce(sum, "USD")
         assertEquals(Money.dollar(10), reduced)
+    }
+
+    @Test
+    fun testPlusReturnSum(){
+        var five = Money.dollar(5) as Money
+        var result = five.plus(five) as Expression
+        var sum = result as Sum
+        assertEquals(five, sum.augend)
+        assertEquals(five, sum.addend)
+    }
+
+    @Test
+    fun testReduceSum(){
+        var sum = Sum(Money.dollar(3),Money.dollar(4)) as Expression
+        var bank = Bank()
+        var result = bank.reduce(sum, "USD")
+        assertEquals(Money.dollar(7), result)
+    }
+
+    @Test
+    fun testReduceMoney(){
+        var bank = Bank()
+        var result = bank.reduce(Money.dollar(1), "USD")
+        assertEquals(Money.dollar(1), result)
     }
 
 }
