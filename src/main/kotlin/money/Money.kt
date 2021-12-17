@@ -19,8 +19,9 @@ open class Money : Expression{
         return Money(amount * multiplier, currency)
     }
 
-    override fun reduce(to: String): Money{
-        return this
+    override fun reduce(bank: Bank, to: String): Money{
+        var rate = bank.rate(currency, to)
+        return Money(amount/rate, to)
     }
 
     fun currency(): String{

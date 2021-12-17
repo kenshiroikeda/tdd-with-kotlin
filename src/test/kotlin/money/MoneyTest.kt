@@ -8,7 +8,7 @@ import kotlin.test.assertTrue
 class MoneyTest {
     @Test
     fun testMultiplication() {
-        var five = Money.dollar(5) as Money
+        var five = Money.dollar(5)
         assertEquals(Money.dollar(10), five.times(2))
         assertEquals(Money.dollar(15), five.times(3))
     }
@@ -28,7 +28,7 @@ class MoneyTest {
 
     @Test
     fun testSimpleAddition(){
-        var five = Money.dollar(5) as Money
+        var five = Money.dollar(5)
         var sum = five.plus(five) as Sum
         var bank = Bank()
         var reduced = bank.reduce(sum, "USD")
@@ -37,8 +37,8 @@ class MoneyTest {
 
     @Test
     fun testPlusReturnSum(){
-        var five = Money.dollar(5) as Money
-        var result = five.plus(five) as Expression
+        var five = Money.dollar(5)
+        var result = five.plus(five)
         var sum = result as Sum
         assertEquals(five, sum.augend)
         assertEquals(five, sum.addend)
@@ -57,6 +57,14 @@ class MoneyTest {
         var bank = Bank()
         var result = bank.reduce(Money.dollar(1), "USD")
         assertEquals(Money.dollar(1), result)
+    }
+
+    @Test
+    fun testReduceMoneyDifferentCountry(){
+        var bank = Bank()
+        bank.addRate("CHF","USD",2)
+        var result =bank.reduce(Money.franc(2), "USD")
+        assertEquals(Money.dollar(1),result)
     }
 
 }
