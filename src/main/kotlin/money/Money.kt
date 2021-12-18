@@ -15,7 +15,7 @@ open class Money : Expression{
         return amount == money.amount && currency.equals(money.currency)
     }
 
-    open fun times(multiplier: Int) :Money{
+    open fun times(multiplier: Int) :Expression{
         return Money(amount * multiplier, currency)
     }
 
@@ -28,7 +28,7 @@ open class Money : Expression{
         return currency
     }
 
-    fun plus(addend: Money): Expression {
+    override fun plus(addend: Expression): Expression {
         return Sum(this, addend)
     }
 
