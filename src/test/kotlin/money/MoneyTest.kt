@@ -77,5 +77,26 @@ class MoneyTest {
         assertEquals(Money.dollar(10), result)
 
     }
+    @Test
+    fun testSumPlusMoney(){
+        var fiveBucks = Money.dollar(5) as Expression
+        var tenFrancs = Money.dollar(10) as Expression
+        var bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        var sum = Sum(fiveBucks,tenFrancs).plus(fiveBucks)
+        var result = bank.reduce(sum,"USD")
+        assertEquals(Money.dollar(15), result)
+    }
+
+    @Test
+    fun testSumTimes(){
+        var fiveBucks = Money.dollar(5) as Expression
+        var tenFrancs = Money.dollar(10) as Expression
+        var bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        var sum = Sum(fiveBucks,tenFrancs).times(2)
+        var result = bank.reduce(sum,"USD")
+        assertEquals(Money.dollar(20), result)
+    }
 
 }

@@ -10,13 +10,12 @@ open class Money : Expression{
         this.currency = currency
     }
 
-    override fun equals(other: Any?): Boolean{
-        var money = other as Money
-        return amount == money.amount && currency.equals(money.currency)
+    override fun times(multiplier: Int) :Expression{
+        return Money(amount * multiplier, currency)
     }
 
-    open fun times(multiplier: Int) :Expression{
-        return Money(amount * multiplier, currency)
+    override fun plus(addend: Expression): Expression {
+        return Sum(this, addend)
     }
 
     override fun reduce(bank: Bank, to: String): Money{
@@ -28,8 +27,9 @@ open class Money : Expression{
         return currency
     }
 
-    override fun plus(addend: Expression): Expression {
-        return Sum(this, addend)
+    override fun equals(other: Any?): Boolean{
+        var money = other as Money
+        return amount == money.amount && currency.equals(money.currency)
     }
 
     override fun toString(): String {

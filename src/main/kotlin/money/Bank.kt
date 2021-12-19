@@ -13,6 +13,6 @@ class Bank {
     }
 
     fun rate(from: String, to: String) :Int{
-        return if(from == to) 1 else rates.get(Pair(from, to))!!
+        return if(from == to) 1 else rates[Pair(from, to)]!!
     }
 }

@@ -9,13 +9,20 @@ class Sum : Expression{
         this.addend = addend
     }
 
+    override fun times(multiplier: Int): Expression {
+        return Sum(augend.times(multiplier), addend.times(multiplier))
+    }
+
+    override fun plus(addend: Expression): Expression {
+        return this
+    }
+
     override fun reduce(bank: Bank, to: String): Money {
         var amount = augend.reduce(bank, to).amount + addend.reduce(bank, to).amount
         return Money(amount, to)
     }
 
-    override fun plus(addend: Expression): Expression {
-        TODO("Not yet implemented")
-    }
+
+
 
 }
